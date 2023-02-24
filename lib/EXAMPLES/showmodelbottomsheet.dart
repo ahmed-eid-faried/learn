@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const Showmodelbottomsheetk());
@@ -9,10 +11,20 @@ class Showmodelbottomsheetk extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Slider',
+      title: 'Showmodelbottomsheet',
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.trackpad,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.invertedStylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Slider'),
+          title: const Text('Showmodelbottomsheet'),
         ),
         body: const ShowmodelbottomsheetP(),
       ),
@@ -51,7 +63,8 @@ class _ShowmodelbottomsheetPState extends State<ShowmodelbottomsheetP> {
                     return Container(
                         height: 200,
                         color: Colors.blueAccent,
-                        child: const Center(child: Text("Showmodelbottomsheet")));
+                        child:
+                            const Center(child: Text("Showmodelbottomsheet")));
                   });
             },
             icon: const Icon(Icons.show_chart),
