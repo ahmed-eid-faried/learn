@@ -1,6 +1,5 @@
 // import 'package:flutter/gestures.dart';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,12 +44,14 @@ class _KPageviewKkkState extends State<KPageviewKkk> {
     {"url": "images/2.png"},
     {"url": "images/3.jfif"},
   ];
+
+  get ture => null;
   @override
   void initState() {
     cp = PageController(
-      initialPage: 2,
+      initialPage: 0,
       keepPage: true,
-      viewportFraction: 0.5, //مقدار ما يعرضمن حجم العنصر
+      viewportFraction: 0.7, //مقدار ما يعرضمن حجم العنصر
     );
     super.initState();
   }
@@ -65,6 +66,7 @@ class _KPageviewKkkState extends State<KPageviewKkk> {
           backgroundColor: Colors.amber,
         ),
         body: PageView.builder(
+            reverse: true,
             controller: cp,
             scrollDirection: Axis.horizontal,
             itemCount: pictures.length,
