@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
+class MySplashScreen extends StatelessWidget {
+  const MySplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSplashScreen(
+      splash: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/logo.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      nextScreen: const MyApp(),
+      splashTransition: SplashTransition.slideTransition,
+      duration: 3000,
+    );
+  }
+}
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MySplashScreen());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          drawer: Drawer(child: Text("HI AHMED")),
+          drawer: const Drawer(child: Text("HI AHMED")),
           appBar: AppBar(
             title: const Text("main"),
           ),
