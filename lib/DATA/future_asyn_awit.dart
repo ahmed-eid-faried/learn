@@ -36,12 +36,12 @@ class _AppState extends State<App> {
 
 Future fun1() async {
   var a;
-  print("fun1 start");
+  print("=========fun1 start");
   await Future.delayed(const Duration(seconds: 3), () {
     a = 10;
-    print("fun1 ahmed");
+    print("=========fun1 ahmed");
   });
-  print("fun1 end $a");
+  print("=========fun1 end $a");
 }
 
 Future fun2() async {
