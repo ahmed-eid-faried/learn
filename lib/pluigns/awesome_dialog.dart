@@ -1,7 +1,6 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,8 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fancy Dialog Example',
       theme: ThemeData.dark(),
-      
-      home: const HomePage(),
+      home: const Ccc(),
     );
   }
 }

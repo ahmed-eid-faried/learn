@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TEXT extends StatelessWidget {
-  const TEXT({super.key});
+  const TEXT(kposition, {super.key});
 
   @override
   Widget build(BuildContext context) {
