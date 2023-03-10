@@ -38,7 +38,39 @@ class Providers extends StatelessWidget {
                 Selector<Model, String>(
                   selector: (_, myType) => myType.showname,
                   builder: (context, value, child) {
+                    print("text name");
                     return Center(child: Text(value));
+                  },
+                ),
+                Selector<Model, int>(
+                  selector: (_, myType) => myType.showage,
+                  builder: (context, value, child) {
+                    print("text age");
+                    return Center(child: Text("$value"));
+                  },
+                ),
+                Consumer<Model>(
+                  builder: (context, model, child) {
+                    print("MaterialButton name");
+                    return MaterialButton(
+                      color: Colors.white,
+                      onPressed: () {
+                        model.changname();
+                      },
+                      child: const Text("change name"),
+                    );
+                  },
+                ),
+                Consumer<Model>(
+                  builder: (context, model, child) {
+                    print("MaterialButton age");
+                    return MaterialButton(
+                      color: Colors.white,
+                      onPressed: () {
+                        model.changage();
+                      },
+                      child: const Text("change age"),
+                    );
                   },
                 ),
               ],
@@ -51,7 +83,6 @@ class Model extends ChangeNotifier {
   get showname => name;
   changname() {
     name = "hi, ahmed";
-    print(name);
     notifyListeners();
   }
 
@@ -60,7 +91,6 @@ class Model extends ChangeNotifier {
   get showage => age;
   changage() {
     age = ++age;
-    print(age);
     notifyListeners();
   }
   /////////////////////////////
