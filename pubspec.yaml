@@ -45,6 +45,9 @@ dependencies:
   jiffy: ^5.0.1
   image_picker: ^0.8.6+4
   video_player: ^2.5.3
+  http: ^0.13.5
+  shared_preferences: ^2.0.18
+  provider: ^6.0.5
   # flutter_native_splash: ^2.2.18
   # odbc: ^0.0.7
 dependency_overrides:
