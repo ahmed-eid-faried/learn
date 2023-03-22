@@ -32,7 +32,7 @@ class Counter extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("bottomSheet")),
       body: Container(
-        color: Colors.amberAccent,
+        color: Colors.blueAccent,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -42,16 +42,18 @@ class Counter extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {
                   Get.bottomSheet(
+                      clipBehavior: Clip.antiAlias,
                       shape: Border.all(
-                        width: 1.0,
+                        width: 2.0,
+                        color: Colors.amber,
                       ),
                       Container(
                           decoration: const BoxDecoration(
+                              color: Colors.amber,
                               borderRadius: BorderRadius.vertical(
                                   top: Radius.circular(20),
                                   bottom: Radius.circular(20))),
                           height: 200,
-                          color: Colors.amber,
                           child: const Center(
                               child: Text("bottomSheet",
                                   style: TextStyle(fontSize: 30)))),
